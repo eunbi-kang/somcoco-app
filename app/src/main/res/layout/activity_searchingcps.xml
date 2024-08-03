@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center|top">
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#FFC23F"
+        android:elevation="20dp">
+
+        <ImageView
+            android:id="@+id/search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/ripple_unbounded_circle"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/search_back"
+            android:background="@drawable/radius_layout"
+            android:elevation="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/search_campus_keyword"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@null"
+                android:hint="캠퍼스를 검색해주세요"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textSize="20dp"/>
+
+            <ImageView
+                android:id="@+id/search_mic_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/ripple_unbounded_circle"
+                android:clickable="true"
+                app:srcCompat="@drawable/ic_mic_black_24dp" />
+
+            <ImageView
+                android:id="@+id/search_filter"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ripple_unbounded_circle"
+                android:clickable="true"
+                app:srcCompat="@drawable/ic_filter_alt_black_48dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/campus_list_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/campus_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <TextView
+            android:id="@+id/search_search_none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="검색결과가 없습니다."
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:visibility="invisible"/>
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/build_drawer"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context=".tour.BuildingInfoActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/build_titlebar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.Somcoco.AppBarOverlay">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/build_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#FFC230"
+                    app:popupTheme="@style/Theme.Somcoco.PopupOverlay">
+
+                    <TextView
+                        android:fontFamily="@font/bmdohyeon"
+                        android:id="@+id/build_info_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="건물 및 부속시설 이름"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/build_titlebar"
+                android:layout_centerHorizontal="true">
+
+                <!-- 건물 정보 레이아웃 -->
+                <RelativeLayout
+                    android:id="@+id/building_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_build_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="5dp">
+
+                        <ImageView
+                            android:id="@+id/build_img"
+                            android:layout_width="300dp"
+                            android:layout_height="180dp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:fontFamily="@font/bmhannapro"
+                        android:id="@+id/build_intro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/card_build_img"
+                        android:layout_alignLeft="@id/build_divider1"
+                        android:layout_marginTop="10dp"
+                        android:text="시설 소개"
+                        android:textColor="@color/black"
+                        android:textSize="25dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/build_tts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/card_build_img"
+                        android:layout_marginTop="20dp"
+                        android:layout_alignRight="@id/build_divider1"
+                        android:background="@drawable/radius_layout">
+
+                        <ImageView
+                            android:id="@+id/build_play"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/ripple_unbounded_circle"
+                            android:clickable="true"
+                            app:srcCompat="@drawable/ic_play_circle_black_24dp" />
+
+                        <ImageView
+                            android:id="@+id/build_pause"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_toRightOf="@+id/build_play"
+                            android:background="@drawable/ripple_unbounded_circle"
+                            android:clickable="true"
+                            app:srcCompat="@drawable/ic_pause_circle_black_24dp" />
+
+                        <ImageView
+                            android:id="@+id/build_stop"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:layout_toRightOf="@+id/build_pause"
+                            android:background="@drawable/ripple_unbounded_circle"
+                            android:clickable="true"
+                            app:srcCompat="@drawable/ic_stop_circle_black_24dp"/>
+
+                    </RelativeLayout>
+<!--                    <Switch-->
+<!--                        android:id="@+id/build_lang"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignBaseline="@+id/build_intro"-->
+<!--                        android:layout_alignRight="@+id/build_audio"-->
+<!--                        android:minWidth="48dp"-->
+<!--                        android:minHeight="48dp" />-->
+
+                    <View
+                        android:id="@+id/build_divider1"
+                        android:layout_width="300dp"
+                        android:layout_height="3dp"
+                        android:layout_below="@+id/build_intro"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:background="#E8E8E8"
+                        android:elevation="2dp" />
+
+                    <RelativeLayout
+                        android:layout_width="300dp"
+                        android:layout_height="250dp"
+                        android:layout_below="@+id/build_divider1"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/text_box">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentTop="true"
+                            android:layout_above="@+id/build_toggle"
+                            android:layout_centerHorizontal="true"
+                            android:elevation="10dp"
+                            android:padding="5dp"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/build_contents"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="10dp"
+                                    android:textSize="15dp"
+                                    android:text="시설 소개란 입니다." />
+
+                            </LinearLayout>
+                        </ScrollView>
+                        <com.google.android.material.button.MaterialButtonToggleGroup
+                            android:id="@+id/build_toggle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            app:selectionRequired="true"
+                            app:singleSelection="true">
+
+                            <Button
+                                android:id="@+id/build_lang_kor"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="70dp"
+                                android:layout_height="40dp"
+                                android:text="KOR" />
+
+                            <Button
+                                android:id="@+id/build_lang_eng"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="70dp"
+                                android:layout_height="40dp"
+                                android:text="ENG" />
+
+                        </com.google.android.material.button.MaterialButtonToggleGroup>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!-- 부속시설 정보 레이아웃 -->
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/facility_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    android:visibility="invisible">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/facil_info1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true">
+
+                            <TextView
+                                android:id="@+id/facil_intro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/facil_divider1"
+                                android:layout_marginTop="20dp"
+                                android:text="시설 소개"
+                                android:textSize="25dp" />
+
+
+<!--                            <Switch-->
+<!--                                android:id="@+id/facil_lang"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_alignBaseline="@+id/facil_intro"-->
+<!--                                android:layout_alignRight="@+id/facil_divider1"-->
+<!--                                android:minWidth="48dp"-->
+<!--                                android:minHeight="48dp" />-->
+                            <com.google.android.material.button.MaterialButtonToggleGroup
+                                android:id="@+id/facil_toggle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignRight="@id/facil_divider1"
+                                android:layout_marginTop="15dp"
+                                app:selectionRequired="true"
+                                app:singleSelection="true">
+
+                                <Button
+                                    android:id="@+id/facil_lang_kor"
+                                    style="?attr/materialButtonOutlinedStyle"
+                                    android:layout_width="70dp"
+                                    android:layout_height="40dp"
+                                    android:text="KOR" />
+
+                                <Button
+                                    android:id="@+id/facil_lang_eng"
+                                    style="?attr/materialButtonOutlinedStyle"
+                                    android:layout_width="70dp"
+                                    android:layout_height="40dp"
+                                    android:text="ENG" />
+
+                            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                            <View
+                                android:id="@+id/facil_divider1"
+                                android:layout_width="300dp"
+                                android:layout_height="3dp"
+                                android:layout_below="@+id/facil_intro"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:background="#E8E8E8"
+                                android:elevation="2dp" />
+
+                            <androidx.core.widget.NestedScrollView
+                                android:layout_width="300dp"
+                                android:layout_height="120dp"
+                                android:layout_below="@+id/facil_divider1"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/text_box"
+                                android:elevation="10dp"
+                                android:padding="5dp"
+                                android:scrollbars="none">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/facil_contents"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:textSize="18dp"
+                                        android:text="시설 소개란 입니다." />
+
+                                </LinearLayout>
+                            </androidx.core.widget.NestedScrollView>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/facil_info2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/facil_info1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:id="@+id/facil_main_task"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="주요 업무"
+                                android:textSize="25dp" />
+
+                            <View
+                                android:id="@+id/facil_divider2"
+                                android:layout_width="300dp"
+                                android:layout_height="3dp"
+                                android:layout_below="@+id/facil_main_task"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:background="#E8E8E8"
+                                android:elevation="2dp" />
+
+                            <androidx.core.widget.NestedScrollView
+                                android:layout_width="300dp"
+                                android:layout_height="120dp"
+                                android:layout_below="@+id/facil_divider2"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/text_box"
+                                android:elevation="10dp"
+                                android:padding="5dp"
+                                android:scrollbars="none">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/facil_task"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:textSize="18dp"
+                                        android:text="시설 소개란 입니다." />
+
+                                </LinearLayout>
+                            </androidx.core.widget.NestedScrollView>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/facil_info3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/facil_info2"
+                            android:layout_below="@id/facil_info2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:id="@+id/facil_event"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp"
+                                android:text="이벤트 및 공지사항"
+                                android:textSize="25dp" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/facil_carousel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/facil_event" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </androidx.core.widget.NestedScrollView>
+            </FrameLayout>
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/build_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@color/white"
+        app:headerLayout="@null"
+        app:menu="@null">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:layout_marginTop="60dp">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/snu_logo" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="300dp"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/logo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:fontFamily="@font/bmdohyeon"
+                    android:id="@+id/build_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/divider"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ripple_unbounded_rectangle"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="건물 소개"
+                    android:textSize="25dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/facil_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+        </RelativeLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

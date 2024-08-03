@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/draw_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="홈"/>
+        <item
+            android:id="@+id/draw_maps"
+            android:icon="@drawable/ic_location_on_black_24dp"
+            android:title="캠퍼스찾기"/>
+        <item
+            android:id="@+id/draw_community"
+            android:icon="@drawable/ic_forum_black_24dp"
+            android:title="커뮤니티"/>
+        <item
+            android:id="@+id/draw_more"
+            android:icon="@drawable/ic_more_horiz_black_24dp"
+            android:title="더보기"/>
+    </group>
+
+</menu>

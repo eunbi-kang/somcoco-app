@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:fontFamily="@font/bmjua"
+        android:id="@+id/check_item"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="7dp"
+        android:layout_toLeftOf="@+id/check_edit"
+        android:inputType="textMultiLine"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+    <ImageView
+        android:id="@+id/check_edit"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_toLeftOf="@+id/check_delete"
+        android:layout_centerVertical="true"
+        android:src="@drawable/outline_edit_black_48dp"/>
+
+    <ImageView
+        android:id="@+id/check_delete"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/outline_delete_black_48dp"/>
+
+</RelativeLayout>

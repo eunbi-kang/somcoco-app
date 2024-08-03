@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="250dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/check_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/bmhannapro"
+            android:text="일정 추가"
+            android:textSize="30dp" />
+
+        <TextView
+            android:fontFamily="@font/bmhannapro"
+            android:id="@+id/select_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/check_title"
+            android:layout_alignLeft="@+id/check_title"
+            android:text="2021-11-10"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/check_content"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/select_date"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/check_radius_layout"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:textSize="15dp" />
+
+        <Button
+            android:fontFamily="@font/bmhannapro"
+            android:id="@+id/check_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#A6A6A6"
+            android:text="확인"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

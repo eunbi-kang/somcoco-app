@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/home"
+        android:enabled="true"
+        android:title="홈"
+        android:icon="@drawable/home_icon" />
+    <item android:id="@+id/campus_location"
+        android:title="캠퍼스찾기"
+        android:enabled="true"
+        android:icon="@drawable/location_icon"/>
+    <item android:id="@+id/community"
+        android:title="커뮤니티"
+        android:enabled="true"
+        android:icon="@drawable/bottom_community_icon" />
+    <item android:id="@+id/menu_calendar"
+        android:title="일정"
+        android:enabled="true"
+        android:icon="@drawable/calendar_icon"/>
+    <item android:id="@+id/etc"
+        android:title="더보기"
+        android:enabled="true"
+        android:icon="@drawable/more_icon" />
+</menu>

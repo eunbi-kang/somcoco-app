@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/location_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/loc_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/loc_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:elevation="10dp"
+        android:theme="@style/ToolbarFont"
+        app:popupTheme="@style/Theme.Somcoco.PopupOverlay" >
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/backarrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/backarrow" />
+        </LinearLayout>-->
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/loc_search_box"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/loc_toolbar"
+        android:background="@drawable/radius_layout"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:elevation="10dp"
+        tools:ignore="NotSibling">
+
+        <EditText
+            android:id="@+id/loc_search_keyword"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@null"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:hint="캠퍼스를 검색해주세요" />
+
+        <ImageView
+            android:id="@+id/loc_search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:background="@drawable/ripple_unbounded_circle"
+            app:srcCompat="@drawable/ic_search_black_24dp"/>
+
+        <ImageView
+            android:id="@+id/loc_search_mic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            android:background="@drawable/ripple_unbounded_circle"
+            app:srcCompat="@drawable/ic_mic_black_24dp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/loc_explore"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/loc_myloc"
+        android:layout_alignRight="@+id/loc_myloc"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/oval_button"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:padding="10dp"
+        app:srcCompat="@drawable/ic_explore_black_48dp"/>
+
+    <ImageView
+        android:id="@+id/loc_myloc"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/oval_button"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:padding="10dp"
+        app:srcCompat="@drawable/ic_my_location_black_48dp" />
+
+</RelativeLayout>

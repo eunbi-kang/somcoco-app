@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:background="@drawable/ripple_unbounded_rectangle">
+
+    <TextView
+        android:id="@+id/facil_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="10dp"
+        android:text="내부시설"
+        android:textSize="20dp"/>
+    <View
+        android:layout_width="230dp"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/facil_name"
+        android:background="#CBCBCB"/>
+</RelativeLayout>

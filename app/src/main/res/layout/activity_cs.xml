@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".etc.Notice"
+    android:orientation="vertical"
+    android:background="#F0F0F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#FFC230"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_unbounded_circle"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="문의하기"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:background="@drawable/edge"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/select">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="일반문의"
+                    android:textSize="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:textColor="#000000"
+                    android:id="@+id/cso"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="!! 정보 오기입, 누락 등으로 답변이 느려질 수 있습니다."
+                android:textColor="#FF572D"
+                android:layout_marginBottom="40dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edge"
+                android:hint="제목을 입력하세요 (20자 이내)"
+                android:id="@+id/cs_title"
+                android:textColor="#000000"
+                android:paddingHorizontal="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/edge"
+                android:hint="문의내용을 상세하게 입력할수록 \n빠른 답변이 가능합니다."
+                android:id="@+id/content"
+                android:textColor="#000000"
+                android:gravity="top"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edge"
+                android:hint="답변을 위해 이메일을 입력해 주세요."
+                android:id="@+id/email"
+                android:textColor="#000000"
+                android:paddingHorizontal="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#DAD2BC"
+                android:layout_marginBottom="15dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="취소"
+                    android:textColor="#000000"
+                    android:id="@+id/reset"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="확인"
+                    android:textColor="#000000"
+                    android:id="@+id/submit"
+                    android:backgroundTint="#FFE6A1"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
